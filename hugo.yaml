@@ -89,6 +89,8 @@ params:
     #   url: mailto:sebastian@sebasptsch.dev
     - name: discord
       url: https://discord.com/users/201596915702300673
+    - name: mastodon
+      url: https://hachyderm.io/@SebasPtsch
 
   # analytics:
   #   google:
