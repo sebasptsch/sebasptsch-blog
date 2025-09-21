@@ -3,6 +3,7 @@ date: 2025-09-21
 draft: false
 title: Adding CABus to my 3D Printer with an EBB Upgrade
 categories: [3D Printing]
+tags: [CANBus, EBB, 3D Printing, Klipper, Bigtreetech]
 ---
 
 Recently I added an upgrade to my 3D printer that I'm really excited about as it takes advantage of quite a few different technologies that I haven't used before. Primarily the use of CANBus and Klipper's multi-MCU processing capabilities.
