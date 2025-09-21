@@ -1,7 +1,7 @@
 ---
 date: 2025-09-21
 draft: false
-title: Adding CABus to my 3D Printer with an EBB Upgrade
+title: Adding CANBus to my 3D Printer with an EBB Upgrade
 categories: [3D Printing]
 tags: [CANBus, EBB, 3D Printing, Klipper, Bigtreetech]
 ---
