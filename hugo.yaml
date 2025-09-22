@@ -91,6 +91,8 @@ params:
       url: https://discord.com/users/201596915702300673
     - name: mastodon
       url: https://hachyderm.io/@SebasPtsch
+    - name: rss
+      url: /index.xml
 
   # analytics:
   #   google:
@@ -106,7 +108,7 @@ params:
     hiddenInSingle: true # hide on single page
 
   editPost:
-    URL: "https://github.com/sebasptsch/sebasptsch.github.io/tree/main/content"
+    URL: "https://github.com/sebasptsch/sebasptsch-blog/tree/main/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
