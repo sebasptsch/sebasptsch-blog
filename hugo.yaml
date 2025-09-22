@@ -78,7 +78,7 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "Hi there \U0001F44B, my name is Sebastian"
-    Content: Welcome to my blog
+    Content: I'm a passionate software developer with a love for creating efficient and user-friendly applications. Welcome to my personal portfolio and blog where I share my projects, insights, and experiences in the world of technology.
 
   socialIcons:
     - name: github
