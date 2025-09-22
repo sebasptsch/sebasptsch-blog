@@ -49,23 +49,23 @@ params:
   assets:
     # disableHLJS: true # to disable highlight.js
     # disableFingerprinting: true
-    # favicon: "<link / abs url>"
-    # favicon16x16: "<link / abs url>"
-    # favicon32x32: "<link / abs url>"
+    favicon: assets/favicon.ico
+    favicon16x16: assets/favicon.ico
+    favicon32x32: assets/favicon.ico
     # apple_touch_icon: "<link / abs url>"
     # safari_pinned_tab: "<link / abs url>"
 
   label:
     text: "Home"
-    icon: /apple-touch-icon.png
+    icon: assets/favicon.ico
     iconHeight: 35
 
   # profile-mode
   profileMode:
     enabled: false # needs to be explicitly set
-    title: ExampleSite
+    title: Sebastian Pietschner's Portfolio
     subtitle: "This is subtitle"
-    imageUrl: "<img location>"
+    imageUrl: assets/favicon.ico
     imageWidth: 120
     imageHeight: 120
     imageTitle: my image
