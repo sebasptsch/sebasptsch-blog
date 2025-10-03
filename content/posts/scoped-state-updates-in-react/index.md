@@ -10,7 +10,7 @@ One of the key challenges in building efficient React applications falls on mana
 
 When you look at a typical React application (not a static website) you will often find that the depth of the component tree can grow very large. A tree with many nested components is the first and most probable cause of performance issues. If any component high up in the tree updates its state every component below it in the tree will re-render as well. If your application performs a lot of operations when a component renders or is re-rendered this can lead to a very sluggish user experience with a single page change causing multiple seconds of lag.
 
-![Example Component Tree](/images/scoped-state-updates-in-react-component-tree.excalidraw.png#center)
+![Example Component Tree](component-tree.excalidraw.png#center)
 
 In the example above we have a simple component tree showing the entry point of the application (Root) and a few nested components. In this scenario if the `Root` component updates its state all components below it will re-render. This means that if the `Root` component updates its state every second (for example to show the current time) all components below it will also re-render every second. If any of these components perform expensive operations during their render phase this can lead to a very poor user experience.
 
