@@ -132,10 +132,18 @@ menu:
       name: categories
       url: /categories/
       weight: 10
-    - identifier: tags
-      name: tags
-      url: /tags/
-      weight: 20
+    # - identifier: tags
+    #   name: tags
+    #   url: /tags/
+    #   weight: 20
+    - identifier: search
+      name: search
+      url: /search/
+      weight: 40
+    - identifier: archive
+      name: archive
+      url: /archives/
+      weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
@@ -152,3 +160,9 @@ caches:
     dir: :cacheDir/images
 
 enableGitInfo: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
