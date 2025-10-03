@@ -71,7 +71,7 @@ There are a couple steps to setup go2rtc with Mainsail on Raspberry Pi OS:
     > Make sure to replace `<tailscale IP>` with the virtual IP address of your Raspberry Pi on your Tailscale network if you are using Tailscale for remote access. (This is optional but recommended for secure remote access.)
 
 5. Finally, configure Mainsail to use the go2rtc stream. 
-    ![Mainsail Webcam Config Window](webcam-config.png)
+    ![Mainsail Webcam Config Window](webcam-config.png#center)
 
     The URL that I used is specific to my reverse proxy setup but the format is generally as follows:
 
