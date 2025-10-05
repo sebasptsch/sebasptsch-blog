@@ -91,6 +91,8 @@ params:
       url: https://discord.com/users/201596915702300673
     - name: mastodon
       url: https://hachyderm.io/@SebasPtsch
+    - name: bluesky
+      url: https://bsky.app/profile/sebasptsch.dev
     - name: rss
       url: /index.xml
 
