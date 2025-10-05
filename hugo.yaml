@@ -99,9 +99,9 @@ params:
   social:
     fediverse_creator: "@sebasptsch@hachyderm.io"
 
-  # analytics:
-  #   google:
-  #     SiteVerificationTag: "XYZabc"
+  analytics:
+    google:
+      SiteVerificationTag: "G-GPKQPW55Z3"
   #   bing:
   #     SiteVerificationTag: "XYZabc"
   #   yandex:
