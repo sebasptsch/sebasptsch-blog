@@ -100,8 +100,8 @@ params:
     fediverse_creator: "@sebasptsch@hachyderm.io"
 
   analytics:
-    google:
-      SiteVerificationTag: "G-GPKQPW55Z3"
+    # google:
+    #   SiteVerificationTag: "G-GPKQPW55Z3"
   #   bing:
   #     SiteVerificationTag: "XYZabc"
   #   yandex:
@@ -128,6 +128,11 @@ params:
     minMatchCharLength: 0
     limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
     keys: ["title", "permalink", "summary", "content"]
+
+services:
+  googleAnalytics:
+    id: "G-GPKQPW55Z3"
+
 menu:
   main:
     - identifier: categories
