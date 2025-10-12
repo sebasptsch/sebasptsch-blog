@@ -129,9 +129,9 @@ params:
     limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
     keys: ["title", "permalink", "summary", "content"]
 
-services:
-  googleAnalytics:
-    id: "G-GPKQPW55Z3"
+# services:
+#   googleAnalytics:
+#     id: "G-GPKQPW55Z3"
 
 menu:
   main:
