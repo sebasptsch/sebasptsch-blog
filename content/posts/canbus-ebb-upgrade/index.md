@@ -16,4 +16,6 @@ This means that I don't have to manage the lengths of ten different cables and h
 
 Setup on the software side was a little finicky requiring complex button combinations to put the STM32 microprocessor into DFU mode to install Klipper but after that (and enabling USB to CAN mode on the E3EZ) it operated flawlessly. 
 
+In order to get my CANBus wiring and software setup right I followed the [Esoterical CAN Bus Guide](https://canbus.esoterical.online/) which has a great breakdown of how CANBus works along with wiring diagrams and Klipper configuration examples.
+
 Though this upgrade didn't affect print quality too much it will make any maintenance a breeze in the future.
