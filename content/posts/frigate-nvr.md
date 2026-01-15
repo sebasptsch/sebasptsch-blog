@@ -1,6 +1,6 @@
 ---
 date: 2026-01-15
-draft: true
+draft: false
 title: Making Analogue Cameras Smart with Frigate NVR and Home Assistant 
 categories: [Self-Hosting, Open Source, Programming]
 tags: [Frigate, Home Assistant, Machine Vision, Machine Learning]
