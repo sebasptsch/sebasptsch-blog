@@ -85,3 +85,111 @@ As events are pulled from Google on a page-by-page basis they're `yielded` from 
 
 This can be seen here: [Student Attendance System](https://github.com/Team3132/attendance/blob/0c9c8c783de274163e1899ff12a3e2b1740ce877/src/server/services/calalendarSync.service.ts).
 
+```ts
+let cachedSyncToken: string | null = null;
+
+const client = new google.auth.JWT({
+    email: env.GOOGLE_CLIENT_EMAIL,
+    key: env.GOOGLE_PRIVATE_KEY,
+    scopes: ["https://www.googleapis.com/auth/calendar.readonly"],
+  });
+
+const calendar = google.calendar({
+    version: "v3",
+    auth: client,
+});
+
+const incrementalSync = async function* (
+  syncToken?: string,
+) {
+  /** The google calendar parameters */
+  const params: calendar_v3.Params$Resource$Events$List = {
+    calendarId: env.GOOGLE_CALENDAR_ID,
+    showDeleted: true,
+    singleEvents: true,
+    syncToken,
+  };
+
+  const [responseData, error] = await trytm(calendar.events.list(params));
+
+  const { kv } = getServerContext();
+
+  if (error) {
+    if (error instanceof Common.GaxiosError && error.status === 410) {
+      // Sync token is invalid, need to do a full sync
+      cachedSyncToken = null;
+      return incrementalSync();
+    }
+
+    throw error;
+  }
+
+  const initialData = responseData.data;
+
+  if (initialData.items) {
+    yield initialData.items;
+  }
+
+  if (initialData.nextSyncToken) {
+    cachedSyncToken = initialData.nextSyncToken;
+    eventLogger.debug("Updated sync token", initialData.nextSyncToken);
+  }
+
+  /** The page token */
+  let pageToken: string | undefined;
+
+  if (initialData.nextPageToken) {
+    pageToken = initialData.nextPageToken;
+  }
+
+  while (pageToken) {
+    const [response, error] = await trytm(
+      calendar.events.list({
+        ...params,
+        pageToken,
+      }),
+    );
+
+    if (error) {
+      if (error instanceof Common.GaxiosError && error.status === 410) {
+        // Sync token is invalid, need to do a full sync
+        cachedSyncToken = null;
+        return incrementalSync();
+      }
+
+      throw error;
+    }
+
+    const data = response.data;
+
+    // If there are items yield them
+    if (data.items) {
+      yield data.items;
+    }
+
+    // If there is a next page token, update the page token
+    // If there is no next page token, set the page token to undefined
+    pageToken = data.nextPageToken ?? undefined;
+
+    // If the sync token is present, update it
+    if (data.nextSyncToken) {
+      cachedSyncToken = data.nextSyncToken;
+    }
+  }
+};
+```
+
+The above function, `incrementalSync` defines an Async Generator that returns calendar events by the page to be added or deleted from the database. 
+
+If we were to take an approach using a typical async function we would have to wait for the entire function to finish collecting events into an array before we could start processing them.
+
+This use case demonstrates exactly why Async Iterators can be so useful in processing or handling large amounts of data.
+
+Now, in our database writing code we can simply call:
+
+```ts
+
+for await (const events of incrementalSync(cachedSyncToken)) {
+    // write to database (an asynchronous opperation)
+}
+```
