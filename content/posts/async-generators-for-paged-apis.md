@@ -1,7 +1,7 @@
 ---
 title: Async Generators for Paged APIs
 date: 2026-01-14
-draft: false
+draft: true
 tags: [Web Development, Open Source, TypeScript]
 categories: [Web Development, Programming]
 ---
@@ -84,3 +84,4 @@ One real-world use case that I implemented was the synchronisation of Google Cal
 As events are pulled from Google on a page-by-page basis they're `yielded` from the calendar synchronisation function and taken in by the database writing and filtering logic.
 
 This can be seen here: [Student Attendance System](https://github.com/Team3132/attendance/blob/0c9c8c783de274163e1899ff12a3e2b1740ce877/src/server/services/calalendarSync.service.ts).
+
