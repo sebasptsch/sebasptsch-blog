@@ -6,7 +6,7 @@ tags: [go2rtc, 3D Printing, RTSP, WebRTC, Klipper, Raspberry Pi, OctoPrint, Main
 categories: ["3D Printing", "Open Source", "Tools"]
 ---
 
-Since initially setting up go2rtc on my printer's attached Raspberry Pi running klipper I've been on a quest to optimise the quality of the video stream. 
+Since initially setting up [go2rtc](https://github.com/AlexxIT/go2rtc) on my printer's attached Raspberry Pi running [klipper](https://www.klipper3d.org/) I've been on a quest to optimise the quality of the video stream. 
 
 # Hardware
 
@@ -24,7 +24,7 @@ Having a brand new higher reosolution presented me with a new problem. How do I 
 
 In my [previous post](/posts/go2rtc-for-3dprinters/) I looked at using the Raspberry Pi Compute Modudule's built-in H264 hardware encoder to preserve my precious CPU utilisation. Since then I've swapped between MJPEG and transcoded H264 streams due to the seemingly low quality of encoding that I was getting.
 
-What I ended up finding out was that I could improve the quality of my encoding by not just by telling go2rtc to use hardware but adjusting the flags on the underlying ffmpeg command.
+What I ended up finding out was that I could improve the quality of my encoding by not just by telling go2rtc to use hardware but adjusting the flags on the underlying [ffmpeg](https://ffmpeg.org/) command.
 
 ```yaml
 streams:
@@ -49,7 +49,7 @@ Combining all these settings results in a high-quality stream over WebRTC encode
 
 # Refining the stream
 
-Because this stream is intended to only be used through Mainsail, potentially with multiple clients active at once there were a couple of modifications that really improved my experience as a user.
+Because this stream is intended to only be used through [Mainsail](https://docs.mainsail.xyz/), potentially with multiple clients active at once there were a couple of modifications that really improved my experience as a user.
 
 Something that I found out that for every stream I was opening on the client it was trying to open an additional ffmpeg stream accessing the same USB device as the previous one and therefore running into errors.
 
