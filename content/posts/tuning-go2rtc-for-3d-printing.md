@@ -20,7 +20,7 @@ This camera upgrade combined with improved variable lighting massively improved 
 
 # Optimising Hardware Acceleration
 
-Having a brand new higher reo=solution presented me with a new problem. How do I stream this higher resolution?
+Having a brand new higher reosolution presented me with a new problem. How do I stream this higher resolution?
 
 In my [previous post](/posts/go2rtc-for-3dprinters/) I looked at using the Raspberry Pi Compute Modudule's built-in H264 hardware encoder to preserve my precious CPU utilisation. Since then I've swapped between MJPEG and transcoded H264 streams due to the seemingly low quality of encoding that I was getting.
 
