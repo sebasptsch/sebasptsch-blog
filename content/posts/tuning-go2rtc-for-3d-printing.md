@@ -1,5 +1,5 @@
 ---
-title: Using go2rtc for Real-Time 3D Printer Monitoring
+title: Tuning go2rtc for 3D Printing
 date: 2026-04-24
 draft: false
 tags: [go2rtc, 3D Printing, RTSP, WebRTC, Klipper, Raspberry Pi, OctoPrint, Mainsail]
